@@ -1,26 +1,41 @@
 package com.example.trainingandroid
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.example.trainingandroid.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    var editTaille: EditText? = null
+    var editPoids:EditText? = null
+    var result: TextView? = null
+    var buttonSubmit: Button? = null
+    var buttonReset:Button? = null
+    var taille:Int?=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        editTaille  = findViewById(R.id.tailleInput);
+        editPoids  = findViewById(R.id.poidsInput);
+
+
+        //editTaille.toString().toBigInteger();
 
         setSupportActionBar(binding.toolbar)
 
